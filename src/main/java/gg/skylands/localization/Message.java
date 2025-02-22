@@ -196,7 +196,7 @@ public class Message {
         @NotNull
         public <V extends Audience> String asMiniMessage(@Nullable V viewer) {
             if (PLATFORM != null) {
-                return PLATFORM.parsePlaceholderApi(viewer, current);
+                current = PLATFORM.parsePlaceholderApi(viewer, current);
             }
 
             // Parse legacy color codes if available.
