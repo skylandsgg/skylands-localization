@@ -5,7 +5,7 @@ plugins {
 
 def id = "SkylandsLocalization"
 def group = 'gg.skylands.localization'
-def ver = '1.0.1'
+def ver = '1.0.2'
 
 repositories {
     mavenCentral()
