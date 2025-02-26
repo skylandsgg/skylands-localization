@@ -26,8 +26,9 @@ jobs:
 
       - name: Configure Gradle
         run: |
-          echo "nexusUsername=${{ secrets.NEXUS_USERNAME }}" >> ~/.gradle/gradle.properties
-          echo "nexusPassword=${{ secrets.NEXUS_PASSWORD }}" >> ~/.gradle/gradle.properties
+          mkdir -p ~/.gradle
+          echo "systemProp.gradle.internal.repository.username=${{ secrets.NEXUS_USER }}
+          systemProp.gradle.internal.repository.password=${{ secrets.NEXUS_PASS }}" > ~/.gradle/gradle.properties
 
       - name: Build and deploy release
         if: github.event_name == 'release'
